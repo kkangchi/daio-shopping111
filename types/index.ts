@@ -1,4 +1,4 @@
-export interface Product {
+/*export interface Product {
   name: string;
   slug: string;
   category: string;
@@ -11,4 +11,10 @@ export interface Product {
   description: string;
   isFeatured?: boolean;
   banner?: string;
-}
+}*/
+
+import { products } from '@/db/schema';
+import { InferSelectModel } from 'drizzle-orm';
+
+// PRODUCTS
+export type Product = InferSelectModel<typeof products>;
